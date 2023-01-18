@@ -1,0 +1,6 @@
+<h1>My Books</h1>
+<ul class="books">
+    <?php foreach ($books as $book): ?>
+    <li><b><?php echo $book['title']; ?></b> by <?php echo $book['author']; ?></li>
+    <?php endforeach; ?>
+</ul>
