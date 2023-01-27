@@ -18,9 +18,7 @@ class Auth extends CoreController{
             $this->user->login(Request::getPost('email'), Request::getPost('password'));
             Request::redirect('/books');
         } catch (\Exception $e) {
-            // TODO: show error message to user
-            //folosim sesiune si flashmessage
-            //echo $e->getMessage(); exit;
+          $_SESSION['err']='Invalid username or password';
             Request::redirect('/auth/login');
         }
     }

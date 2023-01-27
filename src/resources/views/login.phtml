@@ -1,5 +1,8 @@
 <div class="login" style="max-width: 500px; margin: 0 auto;">
     <form action="<?php echo \Core\Url::get('auth/login'); ?>" method="post">
+    <?php if(isset($_SESSION['err'])): ?>
+        <p class="text-danger"><?php echo $_SESSION['err'];?></p>
+        <?php endif?>
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
             <input type="email" name="email" class="form-control" id="email">
@@ -11,3 +14,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+<?php
+if(isset($_SESSION['err'])){
+    unset($_SESSION['err']);
+}
+?>

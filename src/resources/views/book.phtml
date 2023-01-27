@@ -2,5 +2,7 @@
 <ul class="books">
     <?php foreach ($books as $book): ?>
     <li><b><?php echo $book['title']; ?></b> by <?php echo $book['author']; ?></li>
+    <p><a class="text-danger" href="delete.php?delete=<?php
+    echo $key;?>">Delete</a></p>
     <?php endforeach; ?>
 </ul>
